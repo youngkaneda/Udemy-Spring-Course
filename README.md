@@ -1,1 +1,3 @@
-# Spring-Framework-5-and-Spring-Boot-2
+# Udemy_Spring-Course
+
+this repo is intended to record the pratical works that I done during the course
