@@ -10,17 +10,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author kuuhaku
  */
 @Entity
-@SequenceGenerator(initialValue = 1, name = "user_seq")
-public class User implements Serializable {
+public class Invoker implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nickname;
     private String password;
