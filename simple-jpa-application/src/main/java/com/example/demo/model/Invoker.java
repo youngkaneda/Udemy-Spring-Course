@@ -38,4 +38,17 @@ public class Invoker implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Invoker{" + "id=" + id + ", nickname=" + nickname + ", password=" + password + '}';
+    }
 }
