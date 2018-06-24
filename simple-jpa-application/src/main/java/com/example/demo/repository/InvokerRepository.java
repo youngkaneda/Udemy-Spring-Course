@@ -15,6 +15,8 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface InvokerRepository extends JpaRepository<Invoker, Integer>{
     Invoker findByNickname(String nickname);
+    //get or find works
     @Query("SELECT i FROM Invoker i WHERE i.password LIKE %?1%")
-    Invoker findByPassLike(String password);
+    Invoker getByPasswordLike(String password);
+    Invoker getByNicknameIgnoreCaseAndPassword(String nickname, String password);
 }
