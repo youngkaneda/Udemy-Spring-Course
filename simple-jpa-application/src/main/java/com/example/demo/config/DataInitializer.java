@@ -25,11 +25,13 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
     @Override
     public void onApplicationEvent(ContextRefreshedEvent e) {
         if(!repo.findAll().isEmpty()){
-            Invoker invoker = repo.getOne(3);
-            invoker.setPassword("Kaneda");
+//            Invoker invoker = repo.getOne(3);
+//            Invoker invoker = repo.findByNickname("admin");
+            Invoker invoker = repo.findByPassLike("Ka");
+//            invoker.setPassword("Kaneda");
             System.out.println(invoker);
 //            repo.deleteById(3);
-            repo.save(invoker);
+//            repo.save(invoker);
             return;
         }
         Invoker invoker = new Invoker();
