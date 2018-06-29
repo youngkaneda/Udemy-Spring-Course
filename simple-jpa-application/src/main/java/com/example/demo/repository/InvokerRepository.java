@@ -6,17 +6,19 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Invoker;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author kuuhaku
  */
-public interface InvokerRepository extends JpaRepository<Invoker, Integer>{
+public interface InvokerRepository extends /*JpaRepository<Invoker, Integer>*/ MongoRepository<Invoker, String>{
+    //get or find or  works
     Invoker findByNickname(String nickname);
-    //get or find works
-    @Query("SELECT i FROM Invoker i WHERE i.password LIKE %?1%")
+    //@Query("SELECT i FROM Invoker i WHERE i.password LIKE %?1%")
     Invoker getByPasswordLike(String password);
+    @Query("{'nickname' : ?0}")
+    Invoker getByNickname(String nickname);
     Invoker getByNicknameIgnoreCaseAndPassword(String nickname, String password);
 }

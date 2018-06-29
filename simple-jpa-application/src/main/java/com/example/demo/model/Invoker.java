@@ -6,20 +6,20 @@
 package com.example.demo.model;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author kuuhaku
  */
-@Entity
+//@Entity
+@Document
 public class Invoker implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private int id;
+    private String id;
     private String nickname;
     private String password;
 
@@ -39,11 +39,19 @@ public class Invoker implements Serializable {
         this.password = password;
     }
 
-    public void setId(int id) {
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//    
+//    public int getId() {
+//        return id;
+//    }
+    
+    public void setId(String id) {
         this.id = id;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
 

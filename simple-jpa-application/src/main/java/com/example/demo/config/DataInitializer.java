@@ -28,7 +28,8 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
 //            Invoker invoker = repo.getOne(3);
 //            Invoker invoker = repo.findByNickname("admin");
 //            Invoker invoker = repo.getByPasswordLike("Kaneda");
-            Invoker invoker = repo.getByNicknameIgnoreCaseAndPassword("admIn", "Kaneda");
+//            Invoker invoker = repo.getByNicknameIgnoreCaseAndPassword("admIn", "Kaneda");
+            Invoker invoker = repo.getByNicknameIgnoreCaseAndPassword("admIn", "admin");
 //            invoker.setPassword("Kaneda");
             System.out.println(invoker);
 //            repo.deleteById(3);
