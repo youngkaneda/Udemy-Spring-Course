@@ -5,7 +5,7 @@
  */
 package com.example.demo.controller;
 
-import com.example.demo.repository.InvokerRepository;
+import com.example.demo.service.InvokerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +17,17 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class InvokerController {
+    
+    private final InvokerService invokerService;
+
     @Autowired
-    private InvokerRepository repo;
+    public InvokerController(InvokerService invokerService) {
+        this.invokerService = invokerService;
+    }
     
     @GetMapping("/invokers")
     public String getInvokers(Model model) {
-        model.addAttribute("invokersList", repo.findAll());
+        model.addAttribute("invokersList", invokerService.findAll());
         return "invokers";
     }
 }
