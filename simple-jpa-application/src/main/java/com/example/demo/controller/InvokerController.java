@@ -30,4 +30,8 @@ public class InvokerController {
         model.addAttribute("invokersList", invokerService.findAll());
         return "invokers";
     }
+    
+    public void hello() {
+        System.out.println("entering in hello world");
+    }
 }
