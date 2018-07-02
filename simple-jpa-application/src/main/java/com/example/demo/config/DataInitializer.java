@@ -36,9 +36,14 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
 //            repo.save(invoker);
             return;
         }
-        Invoker invoker = new Invoker();
-        invoker.setNickname("admin");
-        invoker.setPassword("admin");
-        repo.save(invoker);
+        Invoker gm = new Invoker();
+        gm.setNickname("game_master");
+        gm.setPassword("akira");
+        repo.save(gm);
+        
+        Invoker admin = new Invoker();
+        admin.setNickname("admin");
+        admin.setPassword("admin");
+        repo.save(admin);
     }
 }
